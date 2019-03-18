@@ -69,6 +69,8 @@ client.on("chat", (channel, user, message, self) => {
   if (message === "$recoverr")
     client.say("CommunityController", "a, special up, hold right, menu ");
 
+  if (message === "$pic")
+    client.say("CommunityController", "down, a, hold a, hold a, hold b, up");
 //CORE
 
 // NON CONTROL
@@ -136,7 +138,7 @@ client.on("chat", (channel, user, message, self) => {
 //EMOTES:
 
   if (message === "$illipinati")
-    client.say("CommunityController", "TheIlluminati 👄 TheIlluminati");
+    client.say("CommunityController", "TheIlluminati ðŸ‘„ TheIlluminati");
 
 // DISCORD LINK:
 
@@ -258,6 +260,9 @@ client.on("chat", (channel, user, message, self) => {
     client.say("CommunityController", "a, special up, hold left, menu, ");
   if (message === "$recoverr,")
     client.say("CommunityController", "a, special up, hold right, menu, ");
+
+  if (message === "$pic,")
+    client.say("CommunityController", "down, a, hold a, hold a, hold b, up,");
 //CORE
 
 // NON CONTROL
