@@ -12,7 +12,7 @@ var options = {
     password: "OAUTH KEY GOES HERE"
   },
   channels: ["CommunityController"]
-};
+};//       ^channels to connect to^
 
 var client = new tmi.client(options);
 
@@ -33,7 +33,7 @@ client.on("chat", (channel, user, message, self) => {
 
   if (message === "$resp")
     client.say("CommunityController", `${user["username"]} payed respects. to check respect count, use $respcount.`),
-	R+=1;
+	R+=1;// ^chat to output to^
   if (message === "$respcount")
     client.say("CommunityController", `${R} people have payed respect since last reconnect.`);
 
