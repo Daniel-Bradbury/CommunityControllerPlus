@@ -3,7 +3,7 @@ A bot add-on to the Community Controller twitch streams
 
 REQUIREMENTS:
 Node.js with npm (should come installed.)
-Place all  into a folder (ccplus, CommunityControllerPlus, etc), then run the following commands inside the folder:
+Place all files into a folder (ccplus, CommunityControllerPlus, etc), then run the following commands inside the folder:
 
 npm init -y
 
