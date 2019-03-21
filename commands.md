@@ -24,7 +24,7 @@ Executes the following combo:
 
 a, hold zr, hold zr, hold smash *, menu 
 # $recover*
-*l, r*
+*[nothing] l, r*
 
 Recovers in a direction stated by executing the following combo:
 
@@ -76,7 +76,7 @@ $y
 # $s/$m
 Start button.
 # $h*
-*l, r, d, u, a, b, x, y, rb, lb*
+*l, r, d, u, a, b, x, y, rb, lb, sm**
 
 Hold the * button
 # $a*
