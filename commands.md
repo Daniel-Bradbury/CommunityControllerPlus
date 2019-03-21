@@ -91,3 +91,12 @@ Move in * direction
 *l, r, d, u*
 
 Look in * direction
+
+# EMOTES
+### $illipinati
+### $isaacwings
+### $purplepower
+### $copypasta
+### $robosquid
+### $squiddab
+### $lenny
