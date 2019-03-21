@@ -9,7 +9,7 @@ var options = {
   },
   identity: {
     username: "communitycontrollerplus",
-    password: "OATH KEY GOES HERE"
+    password: "OAUTH KEY GOES HERE"
   },
   channels: ["CommunityController"]
 };
@@ -46,6 +46,15 @@ client.on("chat", (channel, user, message, self) => {
     client.say("CommunityController", "smash up ");
   if (message === "$smd")
     client.say("CommunityController", "smash down ");
+
+  if (message === "$pbsml") 
+    client.say("CommunityController", "a, smash left, hold zr, start ");
+  if (message === "$pbsmr") 
+    client.say("CommunityController", "a, smash right, hold zr, start ");
+  if (message === "$pbsmu")
+    client.say("CommunityController", "a, smash up, hold zr, start ");
+  if (message === "$pbsmd") 
+    client.say("CommunityController", "a, smash down, hold zr, start ");
 // Special
 
   if (message === "$spl")
@@ -57,6 +66,15 @@ client.on("chat", (channel, user, message, self) => {
   if (message === "$spd")
     client.say("CommunityController", "special down ");
 
+  if (message === "$pbspl") 
+    client.say("CommunityController", "a, special left, hold zr, start ");
+  if (message === "$pbspr") 
+    client.say("CommunityController", "a, special right, hold zr, start ");
+  if (message === "$pbspu")
+    client.say("CommunityController", "a, special up, hold zr, start ");
+  if (message === "$pbspd") 
+    client.say("CommunityController", "a, special down, hold zr, start ");
+
 // COMBOS:
 
   if (message === "$tomol")
@@ -65,9 +83,11 @@ client.on("chat", (channel, user, message, self) => {
     client.say("CommunityController", "a, hold zr, hold zr, hold smash right, menu ");
 
   if (message === "$recoverl")
-    client.say("CommunityController", "a, special up, hold left, menu, ");
+    client.say("CommunityController", "a, hop, special up, hold left, menu, ");
   if (message === "$recoverr")
-    client.say("CommunityController", "a, special up, hold right, menu ");
+    client.say("CommunityController", "a, hop, special up, hold right, menu ");
+  if (message === "$recover")
+    client.say("CommunityController", "a, hop, special up, menu "); 
 
 
 // OTHER FUNCTIONS
@@ -203,13 +223,22 @@ client.on("chat", (channel, user, message, self) => {
   if (message === "$hd")
     client.say("CommunityController", "hold down ");
   if (message === "$ha")
-    client.say("CommunityController", "hold lb ");
+    client.say("CommunityController", "hold a ");
   if (message === "$hb")
-    client.say("CommunityController", "hold rb ");
+    client.say("CommunityController", "hold b ");
   if (message === "$hx")
-    client.say("CommunityController", "hold up ");
+    client.say("CommunityController", "hold x ");
   if (message === "$hy")
-    client.say("CommunityController", "hold down ");
+    client.say("CommunityController", "hold y ");
+
+  if (message === "$hsmu")
+    client.say("CommunityController", "hold smash up ");
+  if (message === "$hsmd")
+    client.say("CommunityController", "hold smash down ");
+  if (message === "$hsml")
+    client.say("CommunityController", "hold smash left ");
+  if (message === "$hsmr")
+    client.say("CommunityController", "hold smash right ");
 // Adjust
 
   if (message === "$al")
@@ -256,10 +285,21 @@ client.on("chat", (channel, user, message, self) => {
     client.say("CommunityController", "smash left, ");
   if (message === "$smr,") 
     client.say("CommunityController", "smash right, ");
-  if (message === "$smu,") -
+  if (message === "$smu,")
     client.say("CommunityController", "smash up, ");
   if (message === "$smd,") 
     client.say("CommunityController", "smash down, ");
+
+  if (message === "$pbsml,") 
+    client.say("CommunityController", "a, smash left, hold zr, start, ");
+  if (message === "$pbsmr,") 
+    client.say("CommunityController", "a, smash right, hold zr, start, ");
+  if (message === "$pbsmu,")
+    client.say("CommunityController", "a, smash up, hold zr, start, ");
+  if (message === "$pbsmd,") 
+    client.say("CommunityController", "a, smash down, hold zr, start, ");
+
+
 // Special
 
   if (message === "$spl,") 
@@ -271,6 +311,14 @@ client.on("chat", (channel, user, message, self) => {
   if (message === "$spd,") 
     client.say("CommunityController", "special down, ");
 
+  if (message === "$pbspl,") 
+    client.say("CommunityController", "a, special left, hold zr, start, ");
+  if (message === "$pbspr,") 
+    client.say("CommunityController", "a, special right, hold zr, start, ");
+  if (message === "$pbspu,")
+    client.say("CommunityController", "a, special up, hold zr, start, ");
+  if (message === "$pbspd,") 
+    client.say("CommunityController", "a, special down, hold zr, start, ");
 // COMBOS:
 
   if (message === "$tomor,") 
@@ -279,9 +327,11 @@ client.on("chat", (channel, user, message, self) => {
     client.say("CommunityController", "a, hold zr, hold zr, hold smash left, menu, ");
 
   if (message === "$recoverl,")
-    client.say("CommunityController", "a, special up, hold left, menu, ");
+    client.say("CommunityController", "a, hop, special up, hold left, menu, ");
   if (message === "$recoverr,")
-    client.say("CommunityController", "a, special up, hold right, menu, ");
+    client.say("CommunityController", "a, hop, special up, hold right, menu, ");
+  if (message === "$recover,")
+    client.say("CommunityController", "a, hop, special up, menu, "); 
 
   if (message === "$pic,")
     client.say("CommunityController", "down, a, hold a, hold a, hold b, up,");
@@ -351,6 +401,15 @@ client.on("chat", (channel, user, message, self) => {
     client.say("CommunityController", "hold up, ");
   if (message === "$hd,") 
     client.say("CommunityController", "hold down, ");
+
+  if (message === "$hsmu")
+    client.say("CommunityController", "hold smash up, ");
+  if (message === "$hsmd")
+    client.say("CommunityController", "hold smash down, ");
+  if (message === "$hsml")
+    client.say("CommunityController", "hold smash left, ");
+  if (message === "$hsmr")
+    client.say("CommunityController", "hold smash right, ");
 // Adjust
 
   if (message === "$al,") 
