@@ -9,10 +9,10 @@ var options = {
   },
   identity: {
     username: "communitycontrollerplus",
-    password: "OAUTH KEY GOES HERE"
+    password: "OATH KEY GOES HERE"
   },
   channels: ["CommunityController"]
-};//       ^channels to connect to^
+};
 
 var client = new tmi.client(options);
 
@@ -33,7 +33,7 @@ client.on("chat", (channel, user, message, self) => {
 
   if (message === "$resp")
     client.say("CommunityController", `${user["username"]} payed respects. to check respect count, use $respcount.`),
-	R+=1;// ^chat to output to^
+	R+=1;
   if (message === "$respcount")
     client.say("CommunityController", `${R} people have payed respect since last reconnect.`);
 
@@ -69,6 +69,8 @@ client.on("chat", (channel, user, message, self) => {
   if (message === "$recoverr")
     client.say("CommunityController", "a, special up, hold right, menu ");
 
+
+// OTHER FUNCTIONS
   if (message === "$pic")
     client.say("CommunityController", "down, a, hold a, hold a, hold b, up");
 //CORE
@@ -138,8 +140,20 @@ client.on("chat", (channel, user, message, self) => {
 //EMOTES:
 
   if (message === "$illipinati")
-    client.say("CommunityController", "TheIlluminati ðŸ‘„ TheIlluminati");
-
+    client.say("CommunityController", "TheIlluminati 👄 TheIlluminati");
+  if (message === "$isaacwings")
+    client.say("CommunityController", "MercyWing1 BibleThump MercyWing2");
+  if (message === "$purplepower")
+    client.say("CommunityController", "PowerUpL EntropyWins PowerUpR");
+  if (message === "$copypasta")
+    client.say("CommunityController", "copyThis pastaThat");
+  if (message === "$robosquid")
+    client.say("CommunityController", "Squid1 Squid2 Squid3 Squid4");
+  if (message === "$squiddab")
+    client.say("CommunityController", "Squid1 HotPokket Squid4");
+  if (message === "$lenny")
+    client.say("CommunityController", "( ͡° ͜ʖ ͡°)");
+  
 // DISCORD LINK:
 
 // CONTROL
@@ -187,6 +201,14 @@ client.on("chat", (channel, user, message, self) => {
   if (message === "$hu")
     client.say("CommunityController", "hold up ");
   if (message === "$hd")
+    client.say("CommunityController", "hold down ");
+  if (message === "$ha")
+    client.say("CommunityController", "hold lb ");
+  if (message === "$hb")
+    client.say("CommunityController", "hold rb ");
+  if (message === "$hx")
+    client.say("CommunityController", "hold up ");
+  if (message === "$hy")
     client.say("CommunityController", "hold down ");
 // Adjust
 
