@@ -18,84 +18,111 @@ var client = new tmi.client(options);
 
 client.connect();
 
-client.on("connected", (address, port) => {
-  //client.action("CommunityController", "is connected. for information on how to use, use $help ");
-  client.action("CommunityController", "reconnected. ");
-});
-
 // Code:
 
-
+  var si = 0
+  
   var R = 0
+  var i = 0
+  var detect
+  var msg = ["BLANK"]
+function cmconf(x) {
+	si+=(x+2)
+	detect=1
+}
 
 client.on("chat", (channel, user, message, self) => {
+si=0
+var msg = ["BLANK"]
+for (i = 0; i < 9; i++) {
+	detect=0
   // Prayer
 
-  if (message === "$resp")
-    client.say("CommunityController", `${user["username"]} payed respects. to check respect count, use $respcount.`),
-	R+=1;
- if (message === "$respect")
-    client.say("CommunityController", `${user["username"]} payed respects. to check respect count, use $respcount.`),
-	R+=1;
-  if (message === "$respcount")
-    client.say("CommunityController", `${R} people have payed respect since last reconnect.`);
+  if (message.substring(si,si+5) === "$resp")
+    msg.push(`${user["username"]} payed respects. to check respect count, use $respcount.`),
+	R+=1,
+	cmconf(5);
+  if (message.substring(si,si+10) === "$respcount")
+    msg.push(`${R} people have payed respect since last reconnect.`),
+	cmconf(10);
 
 // Smash
-  if (message === "$sml")
-    client.say("CommunityController", "smash left ");
-  if (message === "$smr")
-    client.say("CommunityController", "smash right ");
-  if (message === "$smu")
-    client.say("CommunityController", "smash up ");
-  if (message === "$smd")
-    client.say("CommunityController", "smash down ");
+  if (message.substring(si,si+4) === "$sml")
+    msg.push("smash left"),
+	cmconf(4);
+  if (message.substring(si,si+4) === "$smr")
+    msg.push("smash right"),
+	cmconf(4);
+  if (message.substring(si,si+4) === "$smu")
+    msg.push("smash up"),
+	cmconf(4);
+  if (message.substring(si,si+4) === "$smd")
+    msg.push("smash down"),
+	cmconf(4);
 
-  if (message === "$pbsml") 
-    client.say("CommunityController", "a, smash left, hold zr, start ");
-  if (message === "$pbsmr") 
-    client.say("CommunityController", "a, smash right, hold zr, start ");
-  if (message === "$pbsmu")
-    client.say("CommunityController", "a, smash up, hold zr, start ");
-  if (message === "$pbsmd") 
-    client.say("CommunityController", "a, smash down, hold zr, start ");
+  if (message.substring(si,si+6) === "$pbsml") 
+    msg.push("a, smash left, hold zr, start"),
+	cmconf(6);
+  if (message.substring(si,si+6) === "$pbsmr") 
+    msg.push("a, smash right, hold zr, start"),
+	cmconf(6);
+  if (message.substring(si,si+6) === "$pbsmu")
+    msg.push("a, smash up, hold zr, start"),
+	cmconf(6);
+  if (message.substring(si,si+6) === "$pbsmd") 
+    msg.push("a, smash down, hold zr, start"),
+	cmconf(6);
 // Special
 
-  if (message === "$spl")
-    client.say("CommunityController", "special left ");
-  if (message === "$spr")
-    client.say("CommunityController", "special right ");
-  if (message === "$spu")
-    client.say("CommunityController", "special up ");
-  if (message === "$spd")
-    client.say("CommunityController", "special down ");
+  if (message.substring(si,si+4) === "$spl")
+    msg.push("special left"),
+	cmconf(4);
+  if (message.substring(si,si+4) === "$spr")
+    msg.push("special right"),
+	cmconf(4);
+  if (message.substring(si,si+4) === "$spu")
+    msg.push("special up"),
+	cmconf(4);
+  if (message.substring(si,si+4) === "$spd")
+    msg.push("special down"),
+	cmconf(4);
 
-  if (message === "$pbspl") 
-    client.say("CommunityController", "a, special left, hold zr, start ");
-  if (message === "$pbspr") 
-    client.say("CommunityController", "a, special right, hold zr, start ");
-  if (message === "$pbspu")
-    client.say("CommunityController", "a, special up, hold zr, start ");
-  if (message === "$pbspd") 
-    client.say("CommunityController", "a, special down, hold zr, start ");
+  if (message.substring(si,si+6) === "$pbspl") 
+    msg.push("a, special left, hold zr, start,"),
+	cmconf(6);
+  if (message.substring(si,si+6) === "$pbspr") 
+    msg.push("a, special right, hold zr, start,"),
+	cmconf(6);
+  if (message.substring(si,si+6) === "$pbspu")
+    msg.push("a, special up, hold zr, start,");
+  if (message.substring(si,si+6) === "$pbspd") 
+    msg.push("a, special down, hold zr, start,"),
+	cmconf(6);
 
 // COMBOS:
 
-  if (message === "$tomol")
-    client.say("CommunityController", "a, hold zr, hold zr, hold smash left, menu ");
-  if (message === "$tomor")
-    client.say("CommunityController", "a, hold zr, hold zr, hold smash right, menu ");
+  if (message.substring(si,si+6) === "$tomol")
+    msg.push("a, hold zr, hold zr, hold smash left, menu"),
+	cmconf(6);
+  if (message.substring(si,si+6) === "$tomor")
+    msg.push("a, hold zr, hold zr, hold smash right, menu"),
+	cmconf(6);
 
-  if (message === "$recoverl")
-    client.say("CommunityController", "a, hop, special up, hold left, menu, ");
-  if (message === "$recoverr")
-    client.say("CommunityController", "a, hop, special up, hold right, menu ");
-  if (message === "$recover")
-    client.say("CommunityController", "a, hop, special up, menu "); 
+  if (message.substring(si,si+9) === "$recoverl")
+    msg.push("a, hop, special up, hold left, menu,"),
+	cmconf(9);
+  if (message.substring(si,si+9) === "$recoverr")
+    msg.push("a, hop, special up, hold right, menu"),
+	cmconf(9);
+  if (message.substring(si,si+8) === "$recover")
+    msg.push("a, hop, special up, menu"),
+	cmconf(8);
 
 
 // OTHER FUNCTIONS
-  if (message === "$pic")
-    client.say("CommunityController", "down, a, hold a, hold a, hold b, up");
+  if (message.substring(si,si+4) === "$pic")
+    msg.push("down, a, hold a, hold a, hold b, up"),
+	cmconf(4);
 //CORE
 
 // NON CONTROL
@@ -103,16 +130,159 @@ client.on("chat", (channel, user, message, self) => {
 /*
 
   if (message === "$help")
-    client.say("CommunityController", "tinyurl.com/ComConPlus ");
+    msg.push("tinyurl.com/ComConPlus");
 
 */
 
+
+// DISCORD LINK:
+
+// CONTROL
+// Normal
+
+
+// Other cases
+
+  if (message.substring(si,si+2) === "$j")
+    msg.push("jump"),
+	cmconf(2);
+  if (message.substring(si,si+2) === "$m")
+    msg.push("menu"),
+	cmconf(2);
+
+// Hold
+
+  if (message.substring(si,si+3) === "$hl")
+    msg.push("hold left"),
+	cmconf(3);
+  if (message.substring(si,si+3) === "$hr")
+    msg.push("hold right"),
+	cmconf(3);
+  if (message.substring(si,si+4) === "$hlb")
+    msg.push("hold lb"),
+	cmconf(4);
+  if (message.substring(si,si+4) === "$hrb")
+    msg.push("hold rb"),
+	cmconf(4);
+  if (message.substring(si,si+3) === "$hu")
+    msg.push("hold up"),
+	cmconf(3);
+  if (message.substring(si,si+3) === "$hd")
+    msg.push("hold down"),
+	cmconf(3);
+  if (message.substring(si,si+3) === "$ha")
+    msg.push("hold a"),
+	cmconf(3);
+  if (message.substring(si,si+3) === "$hb")
+    msg.push("hold b"),
+	cmconf(3);
+  if (message.substring(si,si+3) === "$hx")
+    msg.push("hold x"),
+	cmconf(3);
+  if (message.substring(si,si+3) === "$hy")
+    msg.push("hold y"),
+	cmconf(3);
+
+  if (message.substring(si,si+5) === "$hsmu")
+    msg.push("hold smash up "),
+	cmconf(5);
+  if (message.substring(si,si+5) === "$hsmd")
+    msg.push("hold smash down "),
+	cmconf(5);
+  if (message.substring(si,si+5) === "$hsml")
+    msg.push("hold smash left "),
+	cmconf(5);
+  if (message.substring(si,si+5) === "$hsmr")
+    msg.push("hold smash right "),
+	cmconf(5);
+// Adjust
+  if (message.substring(si,si+3) === "$al") {
+    msg.push("adjust left"),
+  cmconf(3);} else {
+  if (message.substring(si,si+3) === "$ar") {
+    msg.push("adjust right"),
+  cmconf(3);} else {
+  if (message.substring(si,si+3) === "$au") {
+    msg.push("adjust up"),
+  cmconf(3);} else {
+  if (message.substring(si,si+3) === "$ad") {
+    msg.push("adjust down"),
+  cmconf(3);}
+   else { 
+  if (message.substring(si,si+2) === "$a")
+    msg.push("a"),
+	cmconf(2);
+}}}}
+  if (message.substring(si,si+2) === "$r")
+    msg.push("right"),
+	cmconf(3);
+  if (message.substring(si,si+3) === "$lb")
+    msg.push("lb"),
+	cmconf(3);
+  if (message.substring(si,si+3) === "$rb")
+    msg.push("rb"),
+	cmconf(3);
+  if (message.substring(si,si+2) === "$u")
+    msg.push("up"),
+	cmconf(2);
+  if (message.substring(si,si+2) === "$d")
+	msg.push("down"),
+	cmconf(2);
+  if (message.substring(si,si+2) === "$b")
+    msg.push("b"),
+	cmconf(2);
+  if (message.substring(si,si+2) === "$x")
+    msg.push("x"),
+	cmconf(2);
+  if (message.substring(si,si+2) === "$y")
+    msg.push("y"),
+	cmconf(2);
+  if (message.substring(si,si+2) === "$s")
+    msg.push("start"),
+	cmconf(2);
+// Move
+/*
+  if (message.substring(si,si+3) === "$ml")
+    msg.push("move left");
+  if (message.substring(si,si+3) === "$mr")
+    msg.push("move right");
+  if (message.substring(si,si+3) === "$mu")
+    msg.push("move up");
+  if (message.substring(si,si+3) === "$md")
+    msg.push("move down");
+*/
+// Look
+
+  if (message.substring(si,si+3) === "$ll")
+    msg.push("look left"),
+	cmconf(3); else {
+  if (message.substring(si,si+3) === "$lr")
+    msg.push("look right"),
+	cmconf(3); else {
+  if (message.substring(si,si+3) === "$lu")
+    msg.push("look up"),
+	cmconf(3); else {
+  if (message.substring(si,si+3) === "$ld")
+    msg.push("look down"),
+	cmconf(3);
+	else {
+	if (message.substring(si,si+2) === "$l")
+    msg.push("left"),
+	cmconf(2);
+	}}}}
+
+if (msg[i]===undefined) {
+	msg.push("")
+}
+// Cstick click
+
+}
   if (message === "$test")
-    client.say("CommunityController", "test ");
+    client.say("CommunityController", "test");
   if (message === "$owner")
-    client.action("CommunityController", "was made by Daniel Bradbury ");
+    client.action("CommunityController", "was made by Daniel Bradbury");
   if (message === "$creator")
-    client.action("CommunityController", "was made by Daniel Bradbury ");
+    client.action("CommunityController", "was made by Daniel Bradbury");
 // Passive
 // gg
 
@@ -121,7 +291,7 @@ client.on("chat", (channel, user, message, self) => {
   if (message === "GG")
     client.say("CommunityController", "GG KappaPride");
   if (message === "Gg")
-    client.say("CommunityController", "GG KappaPride");
+    msg.push("GG KappaPride");
 //f / rip
 
   if (message === "f")
@@ -178,276 +348,7 @@ client.on("chat", (channel, user, message, self) => {
     client.say("CommunityController", "Squid1 HotPokket Squid4");
   if (message === "$lenny")
     client.say("CommunityController", "( ͡° ͜ʖ ͡°)");
-  if (message === "$pastabarf")
-    client.say("CommunityController", "KomodoHype pastaThat");
-  
-// DISCORD LINK:
-
-// CONTROL
-// Normal
-
-  if (message === "$l")
-    client.say("CommunityController", "left ");
-  if (message === "$r")
-    client.say("CommunityController", "right ");
-  if (message === "$lb")
-    client.say("CommunityController", "lb ");
-  if (message === "$rb")
-    client.say("CommunityController", "rb ");
-  if (message === "$u")
-    client.say("CommunityController", "up ");
-  if (message === "$d")
-	client.say("CommunityController", "down ");
-  if (message === "$a")
-    client.say("CommunityController", "a ");
-  if (message === "$b")
-    client.say("CommunityController", "b ");
-  if (message === "$x")
-    client.say("CommunityController", "x ");
-  if (message === "$y")
-    client.say("CommunityController", "y ");
-  if (message === "$s")
-    client.say("CommunityController", "start ");
-// Other cases
-
-  if (message === "$j")
-    client.say("CommunityController", "jump ");
-  if (message === "$m")
-    client.say("CommunityController", "menu ");
-
-// Hold
-
-  if (message === "$hl")
-    client.say("CommunityController", "hold left ");
-  if (message === "$hr")
-    client.say("CommunityController", "hold right ");
-  if (message === "$hlb")
-    client.say("CommunityController", "hold lb ");
-  if (message === "$hrb")
-    client.say("CommunityController", "hold rb ");
-  if (message === "$hu")
-    client.say("CommunityController", "hold up ");
-  if (message === "$hd")
-    client.say("CommunityController", "hold down ");
-  if (message === "$ha")
-    client.say("CommunityController", "hold a ");
-  if (message === "$hb")
-    client.say("CommunityController", "hold b ");
-  if (message === "$hx")
-    client.say("CommunityController", "hold x ");
-  if (message === "$hy")
-    client.say("CommunityController", "hold y ");
-
-  if (message === "$hsmu")
-    client.say("CommunityController", "hold smash up ");
-  if (message === "$hsmd")
-    client.say("CommunityController", "hold smash down ");
-  if (message === "$hsml")
-    client.say("CommunityController", "hold smash left ");
-  if (message === "$hsmr")
-    client.say("CommunityController", "hold smash right ");
-// Adjust
-
-  if (message === "$al")
-    client.say("CommunityController", "adjust left ");
-  if (message === "$ar")
-    client.say("CommunityController", "adjust right ");
-  if (message === "$au")
-    client.say("CommunityController", "adjust up ");
-  if (message === "$ad")
-    client.say("CommunityController", "adjust down ");
-
-// Move
-
-  if (message === "$ml")
-    client.say("CommunityController", "move left ");
-  if (message === "$mr")
-    client.say("CommunityController", "move right ");
-  if (message === "$mu")
-    client.say("CommunityController", "move up ");
-  if (message === "$md")
-    client.say("CommunityController", "move down ");
-// Look
-
-  if (message === "$ll")
-    client.say("CommunityController", "look left ");
-  if (message === "$lr")
-    client.say("CommunityController", "look right ");
-  if (message === "$lu")
-    client.say("CommunityController", "look up ");
-  if (message === "$ld")
-    client.say("CommunityController", "look down ");
-
-// Cstick click
-
-});
-
-// Comma clone
-client.on("chat", (channel, user, message, self) => {
-// Code:
-
-// Smash
-
-  if (message === "$sml,") 
-    client.say("CommunityController", "smash left, ");
-  if (message === "$smr,") 
-    client.say("CommunityController", "smash right, ");
-  if (message === "$smu,")
-    client.say("CommunityController", "smash up, ");
-  if (message === "$smd,") 
-    client.say("CommunityController", "smash down, ");
-
-  if (message === "$pbsml,") 
-    client.say("CommunityController", "a, smash left, hold zr, start, ");
-  if (message === "$pbsmr,") 
-    client.say("CommunityController", "a, smash right, hold zr, start, ");
-  if (message === "$pbsmu,")
-    client.say("CommunityController", "a, smash up, hold zr, start, ");
-  if (message === "$pbsmd,") 
-    client.say("CommunityController", "a, smash down, hold zr, start, ");
-
-
-// Special
-
-  if (message === "$spl,") 
-    client.say("CommunityController", "special left, ");
-  if (message === "$spr,") 
-    client.say("CommunityController", "special right, ");
-  if (message === "$spu,") 
-    client.say("CommunityController", "special up, ");
-  if (message === "$spd,") 
-    client.say("CommunityController", "special down, ");
-
-  if (message === "$pbspl,") 
-    client.say("CommunityController", "a, special left, hold zr, start, ");
-  if (message === "$pbspr,") 
-    client.say("CommunityController", "a, special right, hold zr, start, ");
-  if (message === "$pbspu,")
-    client.say("CommunityController", "a, special up, hold zr, start, ");
-  if (message === "$pbspd,") 
-    client.say("CommunityController", "a, special down, hold zr, start, ");
-// COMBOS:
-
-  if (message === "$tomor,") 
-    client.say("CommunityController", "a, hold zr, hold zr, hold smash right, menu, ");
-  if (message === "$tomol,") 
-    client.say("CommunityController", "a, hold zr, hold zr, hold smash left, menu, ");
-
-  if (message === "$recoverl,")
-    client.say("CommunityController", "a, hop, special up, hold left, menu, ");
-  if (message === "$recoverr,")
-    client.say("CommunityController", "a, hop, special up, hold right, menu, ");
-  if (message === "$recover,")
-    client.say("CommunityController", "a, hop, special up, menu, "); 
-
-  if (message === "$pic,")
-    client.say("CommunityController", "down, a, hold a, hold a, hold b, up,");
-//CORE
-
-// NON CONTROL
-// Fetch instructions
-/*
-
-  if (message === "$help")
-    client.say("CommunityController", "tinyurl.com/ComConPlus, ");
-
-*/
-
-  if (message === "$test,") 
-    client.say("CommunityController", "test, ");
-  if (message === "$owner,") 
-    client.action("CommunityController", "was made by Daniel Bradbury, ");
-  if (message === "$creator,") 
-    client.action("CommunityController", "was made by Daniel Bradbury, ");
-// DISCORD LINK:
-  if (message === "$creator,") 
-    client.say("CommunityController", "Invite code: 2CsYxcy");
-// CONTROL
-// Normal
-
-  if (message === "$l,") 
-    client.say("CommunityController", "left, ");
-  if (message === "$r,") 
-    client.say("CommunityController", "right, ");
-  if (message === "$lb,") 
-    client.say("CommunityController", "lb, ");
-  if (message === "$rb,") 
-    client.say("CommunityController", "rb, ");
-  if (message === "$u,") 
-    client.say("CommunityController", "up, ");
-  if (message === "$d,") 
-	client.say("CommunityController", "down, ");
-  if (message === "$a,") 
-    client.say("CommunityController", "a, ");
-  if (message === "$b,") 
-    client.say("CommunityController", "b, ");
-  if (message === "$x,") 
-    client.say("CommunityController", "x, ");
-  if (message === "$y,") 
-    client.say("CommunityController", "y, ");
-  if (message === "$s,") 
-    client.say("CommunityController", "start, ");
-// Other cases
-
-  if (message === "$j,") 
-    client.say("CommunityController", "jump, ");
-  if (message === "$m,") 
-    client.say("CommunityController", "menu, ");
-
-// Hold
-
-  if (message === "$hl,") 
-    client.say("CommunityController", "hold left, ");
-  if (message === "$hr,") 
-    client.say("CommunityController", "hold right, ");
-  if (message === "$hlb,") 
-    client.say("CommunityController", "hold lb, ");
-  if (message === "$hrb,") 
-    client.say("CommunityController", "hold rb, ");
-  if (message === "$hu,") 
-    client.say("CommunityController", "hold up, ");
-  if (message === "$hd,") 
-    client.say("CommunityController", "hold down, ");
-
-  if (message === "$hsmu")
-    client.say("CommunityController", "hold smash up, ");
-  if (message === "$hsmd")
-    client.say("CommunityController", "hold smash down, ");
-  if (message === "$hsml")
-    client.say("CommunityController", "hold smash left, ");
-  if (message === "$hsmr")
-    client.say("CommunityController", "hold smash right, ");
-// Adjust
-
-  if (message === "$al,") 
-    client.say("CommunityController", "adjust left, ");
-  if (message === "$ar,") 
-    client.say("CommunityController", "adjust right, ");
-  if (message === "$au,") 
-    client.say("CommunityController", "adjust up, ");
-  if (message === "$ad,") 
-    client.say("CommunityController", "adjust down, ");
-
-// Move
-
-  if (message === "$ml,") 
-    client.say("CommunityController", "move left, ");
-  if (message === "$mr,") 
-    client.say("CommunityController", "move right, ");
-  if (message === "$mu,") 
-    client.say("CommunityController", "move up, ");
-  if (message === "$md,") 
-    client.say("CommunityController", "move down, ");
-// Look
-
-  if (message === "$ll,") 
-    client.say("CommunityController", "look left, ");
-  if (message === "$lr,") 
-    client.say("CommunityController", "look right, ");
-  if (message === "$lu,") 
-    client.say("CommunityController", "look up, ");
-  if (message === "$ld,") 
-    client.say("CommunityController", "look down, ");
-
-// Cstick click
+if (msg[1] !== "") {
+client.say("CommunityController", `${msg[1]+", "+msg[2]+", "+msg[3]+", "+msg[4]+", "+msg[5]+", "+msg[6]+", "+msg[7]+", "+msg[8]}`)
+}
 });
