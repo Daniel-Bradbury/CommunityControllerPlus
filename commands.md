@@ -98,5 +98,7 @@ Look in * direction
 ### $purplepower
 ### $copypasta
 ### $robosquid
+### $srobosquid
 ### $squiddab
 ### $lenny
+### $pastabarf
