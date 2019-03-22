@@ -1,6 +1,8 @@
 Any instance of * indicates a list of things that can be used in its place, listed after
 
 Usage of '/' is a replacment of the word 'or'
+
+#### Commas work like so: $a, $a
 # $resp
 Adds to a respect counter. checkable by...
 # $respcount
