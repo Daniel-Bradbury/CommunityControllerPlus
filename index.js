@@ -34,6 +34,9 @@ client.on("chat", (channel, user, message, self) => {
   if (message === "$resp")
     client.say("CommunityController", `${user["username"]} payed respects. to check respect count, use $respcount.`),
 	R+=1;
+ if (message === "$respect")
+    client.say("CommunityController", `${user["username"]} payed respects. to check respect count, use $respcount.`),
+	R+=1;
   if (message === "$respcount")
     client.say("CommunityController", `${R} people have payed respect since last reconnect.`);
 
@@ -169,10 +172,14 @@ client.on("chat", (channel, user, message, self) => {
     client.say("CommunityController", "copyThis pastaThat");
   if (message === "$robosquid")
     client.say("CommunityController", "Squid1 Squid2 Squid3 Squid4");
-  if (message === "$squiddab")
+  if (message === "$srobosquid")
+    client.say("CommunityController", "Squid1 Squid3 Squid4");
+  if (message === "$tentadab")
     client.say("CommunityController", "Squid1 HotPokket Squid4");
   if (message === "$lenny")
     client.say("CommunityController", "( ͡° ͜ʖ ͡°)");
+  if (message === "$pastabarf")
+    client.say("CommunityController", "KomodoHype pastaThat");
   
 // DISCORD LINK:
 
