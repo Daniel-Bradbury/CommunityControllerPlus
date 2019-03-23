@@ -46,83 +46,6 @@ for (i = 0; i < 9; i++) {
     msg.push(`${R} people have payed respect since last reconnect.`),
 	cmconf(10);
 
-// Smash
-  if (message.substring(si,si+4) === "$sml")
-    msg.push("smash left"),
-	cmconf(4);
-  if (message.substring(si,si+4) === "$smr")
-    msg.push("smash right"),
-	cmconf(4);
-  if (message.substring(si,si+4) === "$smu")
-    msg.push("smash up"),
-	cmconf(4);
-  if (message.substring(si,si+4) === "$smd")
-    msg.push("smash down"),
-	cmconf(4);
-
-  if (message.substring(si,si+6) === "$pbsml") 
-    msg.push("a, smash left, hold zr, start"),
-	cmconf(6);
-  if (message.substring(si,si+6) === "$pbsmr") 
-    msg.push("a, smash right, hold zr, start"),
-	cmconf(6);
-  if (message.substring(si,si+6) === "$pbsmu")
-    msg.push("a, smash up, hold zr, start"),
-	cmconf(6);
-  if (message.substring(si,si+6) === "$pbsmd") 
-    msg.push("a, smash down, hold zr, start"),
-	cmconf(6);
-// Special
-
-  if (message.substring(si,si+4) === "$spl")
-    msg.push("special left"),
-	cmconf(4);
-  if (message.substring(si,si+4) === "$spr")
-    msg.push("special right"),
-	cmconf(4);
-  if (message.substring(si,si+4) === "$spu")
-    msg.push("special up"),
-	cmconf(4);
-  if (message.substring(si,si+4) === "$spd")
-    msg.push("special down"),
-	cmconf(4);
-
-  if (message.substring(si,si+6) === "$pbspl") 
-    msg.push("a, special left, hold zr, start,"),
-	cmconf(6);
-  if (message.substring(si,si+6) === "$pbspr") 
-    msg.push("a, special right, hold zr, start,"),
-	cmconf(6);
-  if (message.substring(si,si+6) === "$pbspu")
-    msg.push("a, special up, hold zr, start,");
-  if (message.substring(si,si+6) === "$pbspd") 
-    msg.push("a, special down, hold zr, start,"),
-	cmconf(6);
-
-// COMBOS:
-
-  if (message.substring(si,si+6) === "$tomol")
-    msg.push("a, hold zr, hold zr, hold smash left, menu"),
-	cmconf(6);
-  if (message.substring(si,si+6) === "$tomor")
-    msg.push("a, hold zr, hold zr, hold smash right, menu"),
-	cmconf(6);
-
-  if (message.substring(si,si+9) === "$recoverl")
-    msg.push("a, hop, special up, hold left, menu,"),
-	cmconf(9);
-  if (message.substring(si,si+9) === "$recoverr")
-    msg.push("a, hop, special up, hold right, menu"),
-	cmconf(9);
-  if (message.substring(si,si+8) === "$recover")
-    msg.push("a, hop, special up, menu"),
-	cmconf(8);
-
-
-// OTHER FUNCTIONS
-  if (message.substring(si,si+4) === "$pic")
-    msg.push("down, a, hold a, hold a, hold b, up"),
-	cmconf(4);
 //CORE
 
 // NON CONTROL
@@ -182,19 +105,7 @@ for (i = 0; i < 9; i++) {
   if (message.substring(si,si+3) === "$hy")
     msg.push("hold y"),
 	cmconf(3);
-
-  if (message.substring(si,si+5) === "$hsmu")
-    msg.push("hold smash up "),
-	cmconf(5);
-  if (message.substring(si,si+5) === "$hsmd")
-    msg.push("hold smash down "),
-	cmconf(5);
-  if (message.substring(si,si+5) === "$hsml")
-    msg.push("hold smash left "),
-	cmconf(5);
-  if (message.substring(si,si+5) === "$hsmr")
-    msg.push("hold smash right "),
-	cmconf(5);
+	
 // Adjust
   if (message.substring(si,si+3) === "$al") {
     msg.push("adjust left"),
@@ -333,7 +244,7 @@ if (msg[i]===undefined) {
 //EMOTES:
 
   if (message === "$illipinati")
-    client.say("CommunityController", "TheIlluminati 👄 TheIlluminati");
+    client.say("CommunityController", "TheIlluminati ðŸ‘„ TheIlluminati");
   if (message === "$isaacwings")
     client.say("CommunityController", "MercyWing1 BibleThump MercyWing2");
   if (message === "$purplepower")
@@ -347,7 +258,7 @@ if (msg[i]===undefined) {
   if (message === "$tentadab")
     client.say("CommunityController", "Squid1 HotPokket Squid4");
   if (message === "$lenny")
-    client.say("CommunityController", "( ͡° ͜ʖ ͡°)");
+    client.say("CommunityController", "( Í¡Â° ÍœÊ– Í¡Â°)");
 if (msg[1] !== "") {
 client.say("CommunityController", `${msg[1]+", "+msg[2]+", "+msg[3]+", "+msg[4]+", "+msg[5]+", "+msg[6]+", "+msg[7]+", "+msg[8]}`)
 }
