@@ -36,15 +36,6 @@ si=0
 var msg = ["BLANK"]
 for (i = 0; i < 9; i++) {
 	detect=0
-  // Prayer
-
-  if (message.substring(si,si+5) === "$resp")
-    msg.push(`${user["username"]} payed respects. to check respect count, use $respcount.`),
-	R+=1,
-	cmconf(5);
-  if (message.substring(si,si+10) === "$respcount")
-    msg.push(`${R} people have payed respect since last reconnect.`),
-	cmconf(10);
 
 //CORE
 
@@ -188,6 +179,12 @@ if (msg[i]===undefined) {
 // Cstick click
 
 }
+// Respect
+  if (message === "$resp")
+    client.say(`${user["username"]} payed respects. to check respect count, use $respcount.`);
+  if (message === "$respcount")
+    client.say(`${R} people have payed respect since last reconnect.`);
+	
   if (message === "$test")
     client.say("CommunityController", "test");
   if (message === "$owner")
