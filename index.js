@@ -60,10 +60,6 @@ for (i = 0; i < 9; i++) {
   if (message.substring(si,si+2) === "$j")
     msg.push("jump"),
 	cmconf(2);
-  if (message.substring(si,si+2) === "$m")
-    msg.push("menu"),
-	cmconf(2);
-
 // Hold
 
   if (message.substring(si,si+3) === "$hl")
@@ -143,16 +139,24 @@ for (i = 0; i < 9; i++) {
     msg.push("start"),
 	cmconf(2);
 // Move
-/*
   if (message.substring(si,si+3) === "$ml")
-    msg.push("move left");
+    msg.push("move left"),
+	cmconf(3); else {
   if (message.substring(si,si+3) === "$mr")
-    msg.push("move right");
+    msg.push("move right"),
+	cmconf(3); else { 
   if (message.substring(si,si+3) === "$mu")
-    msg.push("move up");
+    msg.push("move up"),
+	cmconf(3); else {
   if (message.substring(si,si+3) === "$md")
-    msg.push("move down");
-*/
+    msg.push("move down"),
+	cmconf(3);
+	else {
+	if (message.substring(si,si+2) === "$m")
+    msg.push("menu"),
+	cmconf(2);
+	}}}}
+	
 // Look
 
   if (message.substring(si,si+3) === "$ll")
