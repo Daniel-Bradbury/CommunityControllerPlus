@@ -19,4 +19,4 @@ __Keep note that the logon key has been removed from the code, so running the bo
 
 __I will not be giving out this key to anyone other than to CommunityController and their managers.__
 
-#### note: This is the base code. For any game-specific code visit the branches of this project.
+#### note: This is the base code. For any game-specific code visit the branches of this project. Branches will only be created if needed and if not, then the bot will just be using the base code
