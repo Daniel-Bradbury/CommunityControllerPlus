@@ -12,10 +12,6 @@ Check the respect counter and display in chat.
 
 # $test
 Outputs a test message in chat.
-# $owner/$creator
-Self credit :)
-# $encourage
-Outputs an encouraging message in chat
 
 # NORMAL BUTTONS
 
