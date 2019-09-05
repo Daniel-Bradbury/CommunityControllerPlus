@@ -191,10 +191,6 @@ if (msg[i]===undefined) {
 	
   if (message === "$test")
     client.say("CommunityController", "test");
-  if (message === "$owner")
-    client.action("CommunityController", "was made by Daniel Bradbury");
-  if (message === "$creator")
-    client.action("CommunityController", "was made by Daniel Bradbury");
 // Passive
 // gg
 
@@ -238,10 +234,7 @@ if (msg[i]===undefined) {
     client.say("CommunityController", "KappaPride");
   if (message === "Kek")
     client.say("CommunityController", "KappaPride");
-//BotTalk
 
-  if (message === "$encourage")
-    client.say("CommunityController", "You can do it! CoolCat");
 //EMOTES:
 
   if (message === "$illipinati")
