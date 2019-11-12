@@ -1,8 +1,9 @@
 # CommunityControllerPlus
 A bot add-on to the Community Controller twitch streams
 
-REQUIREMENTS:
-Node.js with npm
+### REQUIREMENTS:
+#### Node.js with npm
+
 Place all files into a folder, then install tmi.js inside that folder with the following command:
 
 `npm install tmi.js --save`
