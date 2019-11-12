@@ -210,11 +210,11 @@ if (msg[i]===undefined) {
 }
 // Dabs
   if (message === "$dab") {
-    client.say(`${user["username"]} dabbed. to check the dab count, use $dabcount.`);
-    dab+=1;
+    client.say("CommunityController", `${user["username"]} dabbed. to check the dab count, use $dabcount.`);
+    dabs+=1;
   }
   if (message === "$dabcount") {
-    client.say(`${dab} people have payed respect since last reconnect.`);
+    client.say("CommunityController", `${dabs} people have dabbed.`);
   }
 	
   if (message === "$test") {
