@@ -268,7 +268,7 @@ if (msg[i]===undefined) {
 //EMOTES:
 
   if (message === "$illipinati") {
-    client.say("CommunityController", "TheIlluminati ðŸ‘„ TheIlluminati");
+    client.say("CommunityController", "TheIlluminati 👄 TheIlluminati");
   }
   if (message === "$isaacwings") {
     client.say("CommunityController", "MercyWing1 BibleThump MercyWing2");
