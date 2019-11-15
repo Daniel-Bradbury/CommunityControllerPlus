@@ -3,9 +3,9 @@ Any instance of * indicates a list of things that can be used in its place, list
 Usage of '/' is a replacment of the word 'or'
 
 #### Commas work like so: $a, $a
-# $resp
+# $dab
 Adds to a respect counter. checkable by...
-# $respcount
+# $dabcount
 Check the respect counter and display in chat.
 # $sm*
 *l, r, d, u*
